@@ -59,8 +59,10 @@ class downloadPanel(Toplevel):
                     i.deselect()
 
         # check all button
+        # tk.Checkbutton(self, text='Select All', font=('Arial', 18), variable=var,
+        #                command=checkAll).place(x=0, y=self.baseY + 80)
         tk.Checkbutton(self, text='Select All', font=('Arial', 18), variable=var,
-                       command=checkAll).place(x=0, y=self.baseY + 80)
+                       command=checkAll).place(x=0, y=0)
         # dowmload buttons
         tk.Button(self, text='Download', font=('Arial', 16),
                   command=lambda: self.downloadChapters(s)).place(x=450, y=self.baseY + 80)
