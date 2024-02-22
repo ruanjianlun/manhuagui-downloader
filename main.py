@@ -19,7 +19,14 @@ class mainWindow(tk.Tk):
         self.var_address = tk.StringVar()
         self.var_url = tk.StringVar()
         self.var_address.set('manga/')
-        self.var_url.set('https://www.manhuagui.com/comic/24973/')
+        # 风云第一部
+        # self.var_url.set('https://www.manhuagui.com/comic/943/')
+        #风云第三部
+        # self.var_url.set('https://www.manhuagui.com/comic/838/')
+        # 天子传奇6
+        # self.var_url.set('https://www.manhuagui.com/comic/3370/')
+        # 天子传奇8
+        self.var_url.set('https://www.manhuagui.com/comic/3274/')
         tk.Entry(self, textvariable=self.var_url, font=('Arial', 14), width=28).place(x=60, y=baseY)  # url field
         tk.Entry(self, textvariable=self.var_address, font=('Arial', 14), width=28).place(x=60,
                                                                                           y=baseY + 40)  # address field
@@ -66,6 +73,15 @@ class downloadPanel(Toplevel):
         # dowmload buttons
         tk.Button(self, text='Download', font=('Arial', 16),
                   command=lambda: self.downloadChapters(s)).place(x=450, y=self.baseY + 80)
+
+        # tk中的列表可以滚动
+        self.scrollbar = Scrollbar(self)
+        self.scrollbar.pack(side=RIGHT, fill=Y)
+        self.listbox = Listbox(self, yscrollcommand=self.scrollbar.set)
+        for i in s.existedChapters():
+            self.listbox.insert(END, i)
+
+        # tk中的列表可以滚动
         self.mainloop()
 
     def place_label(self, s):
