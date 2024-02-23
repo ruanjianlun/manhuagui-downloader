@@ -26,7 +26,9 @@ class mainWindow(tk.Tk):
         # 天子传奇6
         # self.var_url.set('https://www.manhuagui.com/comic/3370/')
         # 天子传奇8
-        self.var_url.set('https://www.manhuagui.com/comic/3274/')
+        # self.var_url.set('https://www.manhuagui.com/comic/3274/')
+        # 中华英雄前传
+        self.var_url.set('https://www.manhuagui.com/comic/27892/')
         tk.Entry(self, textvariable=self.var_url, font=('Arial', 14), width=28).place(x=60, y=baseY)  # url field
         tk.Entry(self, textvariable=self.var_address, font=('Arial', 14), width=28).place(x=60,
                                                                                           y=baseY + 40)  # address field
