@@ -1,0 +1,9 @@
+version: '3'
+services:
+  manhuagui-downloader:
+    build: .
+    image: manhuagui-img
+    ports:
+      - "2000:2000"
+    volumes:
+      - ./test/data:/app/manga

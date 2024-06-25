@@ -28,7 +28,9 @@ class mainWindow(tk.Tk):
         # 天子传奇8
         # self.var_url.set('https://www.manhuagui.com/comic/3274/')
         # 中华英雄前传
-        self.var_url.set('https://www.manhuagui.com/comic/27892/')
+        # self.var_url.set('https://www.manhuagui.com/comic/27892/')
+        # 天子传奇3
+        self.var_url.set('https://www.manhuagui.com/comic/45263/')
         tk.Entry(self, textvariable=self.var_url, font=('Arial', 14), width=28).place(x=60, y=baseY)  # url field
         tk.Entry(self, textvariable=self.var_address, font=('Arial', 14), width=28).place(x=60,
                                                                                           y=baseY + 40)  # address field
@@ -110,7 +112,5 @@ class downloadPanel(Toplevel):
         for i in range(s.length):
             if self.buttons[i].cget("state") == 'normal' and s.chapters[i][2].get():
                 s.downloadChapter(s.chapters[i][1])
-
-
 if __name__ == '__main__':
     mainWindow()
