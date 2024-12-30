@@ -30,7 +30,11 @@ class mainWindow(tk.Tk):
         # 中华英雄前传
         # self.var_url.set('https://www.manhuagui.com/comic/27892/')
         # 天子传奇3
-        self.var_url.set('https://www.manhuagui.com/comic/45263/')
+        # self.var_url.set('https://www.manhuagui.com/comic/45263/')
+        # 剑风传奇烙印战士更新至378
+        # self.var_url.set('https://www.manhuagui.com/comic/1769/')
+
+        self.var_url.set('https://www.manhuagui.com/comic/3047/')
         tk.Entry(self, textvariable=self.var_url, font=('Arial', 14), width=28).place(x=60, y=baseY)  # url field
         tk.Entry(self, textvariable=self.var_address, font=('Arial', 14), width=28).place(x=60,
                                                                                           y=baseY + 40)  # address field
