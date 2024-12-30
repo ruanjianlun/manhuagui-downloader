@@ -44,7 +44,8 @@ class MangaDownloader:
     @staticmethod
     def createDirectory(path):
         """create a new file at path"""
-        print("create")
+        path = sanitize_filepath(path)
+        print(f"create_directory: {path}")
         Path(path).mkdir(parents=True, exist_ok=True)
 
     def isMangaExist(self):
@@ -84,6 +85,8 @@ class MangaDownloader:
                 time.sleep(2)
                 continue
             filename = (localPath + os.path.basename(url))[:-5]
+            filename = sanitize_filepath(filename)
+            print(f'printfilename: {filename}')
             file = open(filename, 'wb')
             file.write(res.content)
             file.close()
@@ -92,3 +95,10 @@ class MangaDownloader:
             return
         print('超过重复次数 跳过此章')
 
+
+def sanitize_filepath(filepath):
+    # 定义非法字符的正则表达式
+    illegal_chars = r'[<>:"|?*]'
+    # 使用re.sub()方法去掉非法字符
+    sanitized_path = re.sub(illegal_chars, '', filepath)
+    return sanitized_path
